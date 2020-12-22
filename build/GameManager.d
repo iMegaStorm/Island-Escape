@@ -1,5 +1,5 @@
-Enemy.o: C\:/devkitPro/\#projects/as1/source/Enemy.cpp \
- C\:/devkitPro/portlibs/ppc/include/grrlib.h \
+GameManager.o: C\:/devkitPro/\#Projects/AS1/source/GameManager.cpp \
+ C\:/devkitPro/\#Projects/AS1/source/GameManager.h \
  C\:/devkitPro/libogc/include/gccore.h \
  C\:/devkitPro/libogc/include/ogc/dsp.h \
  C\:/devkitPro/libogc/include/gctypes.h \
@@ -40,6 +40,7 @@ Enemy.o: C\:/devkitPro/\#projects/as1/source/Enemy.cpp \
  C\:/devkitPro/libogc/include/ogc/usbgecko.h \
  C\:/devkitPro/libogc/include/ogc/video_types.h \
  C\:/devkitPro/libogc/include/ogc/texconv.h \
+ C\:/devkitPro/portlibs/ppc/include/grrlib.h \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB__lib.h \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB__inline.h \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h \
@@ -51,8 +52,13 @@ Enemy.o: C\:/devkitPro/\#projects/as1/source/Enemy.cpp \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_settings.h \
  C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h \
- C\:/devkitPro/\#projects/as1/source/Enemy.h
-C\:/devkitPro/portlibs/ppc/include/grrlib.h:
+ C\:/devkitPro/libogc/include/ogc/pad.h \
+ C\:/devkitPro/\#Projects/AS1/source/gfx/bg.h \
+ C\:/devkitPro/\#Projects/AS1/source/gfx/tileset.h \
+ C\:/devkitPro/\#Projects/AS1/source/gfx/maincharacter.h \
+ C\:/devkitPro/\#Projects/AS1/source/MenuFont.h \
+ C\:/devkitPro/\#Projects/AS1/source/GameFont.h
+C\:/devkitPro/\#Projects/AS1/source/GameManager.h:
 C\:/devkitPro/libogc/include/gccore.h:
 C\:/devkitPro/libogc/include/ogc/dsp.h:
 C\:/devkitPro/libogc/include/gctypes.h:
@@ -93,6 +99,7 @@ C\:/devkitPro/libogc/include/ogc/video_types.h:
 C\:/devkitPro/libogc/include/ogc/usbgecko.h:
 C\:/devkitPro/libogc/include/ogc/video_types.h:
 C\:/devkitPro/libogc/include/ogc/texconv.h:
+C\:/devkitPro/portlibs/ppc/include/grrlib.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB__lib.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB__inline.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h:
@@ -104,4 +111,9 @@ C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_handle.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_settings.h:
 C\:/devkitPro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h:
-C\:/devkitPro/\#projects/as1/source/Enemy.h:
+C\:/devkitPro/libogc/include/ogc/pad.h:
+C\:/devkitPro/\#Projects/AS1/source/gfx/bg.h:
+C\:/devkitPro/\#Projects/AS1/source/gfx/tileset.h:
+C\:/devkitPro/\#Projects/AS1/source/gfx/maincharacter.h:
+C\:/devkitPro/\#Projects/AS1/source/MenuFont.h:
+C\:/devkitPro/\#Projects/AS1/source/GameFont.h:

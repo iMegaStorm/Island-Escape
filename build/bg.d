@@ -1,1 +1,1 @@
-bg.o: C\:/devkitPro/\#projects/as1/source/gfx/bg.c
+bg.o: C\:/devkitPro/\#Projects/AS1/source/gfx/bg.c

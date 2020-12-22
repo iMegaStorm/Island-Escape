@@ -13,17 +13,25 @@
 		this->totalTime = 0;
 		this->switchTime = 0.8f;
 		this->faceRight = true;
-		curHp = 30, maxHp = 5;
+		curHp = 30;
 		isAlive = true;
+		isLevelCompleted = false;
+		showFont = false;
+		x = 288, y = 192;
+		totalDeathTime = 50.0f;
+		deathTime = 1.0f;
+		
+		key = 0;
 	}
 
 	Player::~Player()
 	{
 	}	
 
-	void Player::Inputs(int MapCollider[40][70])
+	void Player::Inputs(signed int MapCollider[40][70], signed short MapGraphics[40][70])
 	{
-		if((dirX == 0) && (dirY == 0) && isAlive == true) //If the player isnt moving, set the animation to the start
+	
+		if((dirX == 0) && (dirY == 0) && isAlive == true && isLevelCompleted == false) //If the player isnt moving, set the animation to the start
 		{
 			if (PAD_ButtonsHeld(0) & PAD_BUTTON_LEFT)
 			{
@@ -70,9 +78,20 @@
 	        {
 		        dirY = 4;
 	        }
+			else if (curHp <= 0)
+			{
+				playerRect = 31;
+			}
 		}
-
-		if((dirX == 0) && (dirY == 0)) //If the player isnt moving, set the animation to the start
+		else if (isAlive == false)
+		{
+			if(faceRight)
+				playerRect = 30;
+			else
+				playerRect = 31;
+		}
+		
+		if((dirX == 0) && (dirY == 0) && isAlive) //If the player isnt moving, set the animation to the start
 		{
 			totalTime += deltaTime;
 			switchTime = 2.0f;
@@ -184,7 +203,7 @@
 		{
 			curHp--;     // Need to implement a timer of taking damage 943
 			if (curHp == 0)
-			{
+			{					
 				isAlive = false;
 			}
 		}
@@ -192,9 +211,13 @@
 		//OffsetX code
 		offsetX+=dirX;
         if(dirX>0)
-            bgX++;
+        {
+            bgX++;  
+        }
         else if(dirX<0)
+        {
             bgX--;
+        }
         if((bgX>-90) || (bgX<-63))
             bgX=-32;
 
@@ -230,4 +253,53 @@
             }
             startY++;
         }
+
+		if (PAD_ButtonsHeld(0) & PAD_BUTTON_A)
+		{
+			if(MapGraphics[8+startY][10+startX] == 54) // Changes the tile on the players feet
+			{
+				MapGraphics[8+startY][10+startX] = 58;
+				key += 1;
+			}
+			else if(MapGraphics[8+startY][11+startX] == 54)
+			{
+				MapGraphics[8 + startY][11 + startX] = 58;
+				key += 1;
+			}
+
+			if(((MapCollider[8+startY][10+startX] == 97) || (MapCollider[8+startY][11+startX] == 97)) && key == 3 && PAD_ButtonsHeld(0) & PAD_BUTTON_A)
+			{
+				isLevelCompleted = true;
+			}	
+		}
+
+		if(curHp <= 0)
+		{
+			
+			if (totalDeathTime >= deathTime)
+			{
+				deathTime += 1;
+			}
+			else
+			{
+				showFont = true;
+			}
+		}
 	}
+
+	// Dev Cheat Mode
+	//if (PAD_ButtonsHeld(0) & PAD_BUTTON_X)
+	//{
+	//	//x = 288, y = 192;
+	//	//this->startX = 0, this->startY = 0;
+	//	//this->dirX = 0;
+	//	//this->dirY = 0;
+	//	//this->offsetX = 0, this->offsetY = 0;
+	//	//this->bgX = -32, this->bgY = -32;
+	//	//key = 0;*/
+	//	//key = 3;
+	//	//isLevelCompleted = true;
+	//	//curHp = 0;
+	//	//showFont = true;
+	//}
+

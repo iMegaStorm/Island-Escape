@@ -1,1 +1,1 @@
-maincharacter.o: C\:/devkitPro/\#projects/as1/source/gfx/maincharacter.c
+maincharacter.o: C\:/devkitPro/\#Projects/AS1/source/gfx/maincharacter.c
