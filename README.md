@@ -1,2 +1,2 @@
 # Island-Escape
- This is a University project which is ported to work on Gamecube
+ This is a year 2 University project thats been ported to GameCube
